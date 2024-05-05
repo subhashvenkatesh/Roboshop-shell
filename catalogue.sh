@@ -89,4 +89,4 @@ VALIDATE $? "installing mongodb repo"
 
 mongo --host mongodb.erumamadu.online </app/schema/catalogue.js
 
-VALIDATE $? "Loading catalogue data"
+VALIDATE $? "Loading catalogue data into mongodb"
