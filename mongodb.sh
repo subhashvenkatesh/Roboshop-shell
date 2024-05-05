@@ -16,16 +16,16 @@ if [ $1 -ne 0 ]
 then
     echo -e "$2.....$R FAILED $N"
 else
-    echo "$2.....$G SUCCESS $N"
+    echo -e "$2.....$G SUCCESS $N"
 fi
 
 }
 
 if [ ID -ne 0 ]
 then
-    echo "$R ERROR:: Try with root user $N"
+    echo -e "$R ERROR:: Try with root user $N"
 else
-    echo "$G Your a root user $N"
+    echo -e "$G Your a root user $N"
 fi
 
 cp mongo.rep /etc/yum.repos.d/mongo.repo &>> $LOGFILE
