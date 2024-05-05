@@ -11,6 +11,16 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
+VALIDATE(){
+if [ $1 -ne 0 ]
+then
+    echo -e "$2.....$R FAILED $N"
+else
+    echo -e "$2.....$G SUCCESS $N"
+fi
+
+}
+
 if [ $ID -ne 0 ]
 then
     echo -e "$R ERROR: Try with root access $N"
