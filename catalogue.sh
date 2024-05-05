@@ -13,7 +13,7 @@ LOGFILE="/tmp/"$0-$TIMESTAMP.log"
 
 if [ $ID -ne 0 ]
 then
-    echo -e "$R ERROR: Try with root access $N "
+    echo -e "$R ERROR: Try with root access $N"
 else
     echo -e "$G Your a root user $N"
 fi
