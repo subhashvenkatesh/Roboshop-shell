@@ -25,6 +25,7 @@ fi
 if [ $ID -ne 0 ]
 then
     echo -e "$R ERROR: Try with root access $N"
+    exit 1
 else
     echo -e "$G Your a root user $N"
 fi
