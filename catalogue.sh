@@ -41,9 +41,14 @@ dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "installing nodejs"
 
-useradd -o roboshop &>> $LOGFILE
-
-VALIDATE $? "Creating user"
+id roboshop
+if [ $? -ne 0 ]
+then
+    useradd roboshop
+    VALIDATE $? "creating user"
+else
+    echo -e "Roboshop user....already exit   $Y SKIPPING $N"
+fi
 
 mkdir -p /app &>> $LOGFILE
 
@@ -55,11 +60,12 @@ VALIDATE $? "downloading catalogue data"
 
 cd /app &>> $LOGFILE
 
-VALIDATE $? "entering directory"
+VALIDATE $? "entering into app directory"
 
-dnf module enable nodejs:18 -y &>> $LOGFILE
+unzip -o /tmp/catalogue.zip &>> $LOGFILE
 
-VALIDATE $? "unzipping the dependencies"
+VALIDATE $? "unzipping catalogue"
+
 
 npm install &>> $LOGFILE
 
