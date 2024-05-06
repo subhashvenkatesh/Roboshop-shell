@@ -96,6 +96,6 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "installing mongodb repo"
 
-mongo --host mongodb.erumamadu.online </app/schema/catalogue.js
+mongo --host mongodb.erumamadu.online </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Loading catalogue data into mongodb"
