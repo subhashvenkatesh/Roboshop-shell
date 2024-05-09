@@ -39,30 +39,30 @@ else
     echo -e "user is already existing ....$Y SKIPPING $N"
 fi
 
-mkdir -p /app &>> $VALIDATE
+mkdir -p /app &>> $LOGFILE
 VALIDATE $? "Creating app directory"
 
-curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>> $VALIDATE
+curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>> $LOGFILE
 VALIDATE $? "Downloading payment"
 
-cd /app  &>> $VALIDATE
+cd /app  &>> $LOGFILE
 VALIDATE $? "changing directory into app"
 
-unzip -o /tmp/payment.zip &>> $VALIDATE
+unzip -o /tmp/payment.zip &>> $LOGFILE
 VALIDATE $? "Unzipping payment"
 
 
-pip3.6 install -r requirements.txt &>> $VALIDATE
+pip3.6 install -r requirements.txt &>> $LOGFILE
 VALIDATE $? "Installing payment dependencies"
 
-cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service &>> $VALIDATE
+cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service &>> $LOGFILE
 VALIDATE $? "coping payment service"
 
-systemctl daemon-reload &>> $VALIDATE
+systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Daemon loading"
 
-systemctl enable payment &>> $VALIDATE
+systemctl enable payment &>> $LOGFILE
 VALIDATE $? "enabling payment"
 
-systemctl start payment &>> $VALIDATE
+systemctl start payment &>> $LOGFILE
 VALIDATE $? "starting payment"
