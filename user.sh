@@ -43,10 +43,10 @@ dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "Installing nodejs"
 
-id roboshop
+id roboshop 
 if [ $? -ne 0 ]
 then
-    useradd roboshop
+    useradd roboshop &>> $LOGFILE
     VALIDATE $? "Creating user"
  else
     echo -e "Roboshop user is already exit...$Y SKIPPING $N"
