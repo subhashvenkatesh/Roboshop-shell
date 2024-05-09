@@ -70,7 +70,7 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "Installing Dependencies"
 
-cp /home/centos/roboshop-shell /etc/systemd/system/user.service &>> $LOGFILE
+cp /home/centos/roboshop-shel/user.service /etc/systemd/system/user.service &>> $LOGFILE
 
 VALIDATE $? "Copying user service"
 
