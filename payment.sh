@@ -28,7 +28,7 @@ else
     echo -e "$G Your a root user $N"
 fi
 
-dnf install python36 gcc python3-devel -y
+dnf install python36 gcc python3-devel -y &>> $LOGFILE
 
 id roboshop &>> $LOGFILE
 if [ $? -ne 0 ]
