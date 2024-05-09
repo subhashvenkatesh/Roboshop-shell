@@ -25,7 +25,7 @@ VALIDATE(){
         echo -e "ERROR:: $R Try with root access $N"
         exit 1
     else
-        echo -e " $G Your a root user"
+        echo -e " $G Your a root user $N"
     fi
 
 
