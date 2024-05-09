@@ -20,6 +20,13 @@ VALIDATE(){
     fi
 }
 
+if [ $ID -ne 0 ]
+then
+    echo -e "$R ERROR: Try with root access"
+else
+    echo -e "$G Your a root user"
+fi
+        
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>> $LOGFILE
 VALIDATE $? "Downloading erland script"
 
