@@ -50,7 +50,7 @@ VALIDATE(){
     mkdir -p /app &>> $LOGFILE
        VALIDATE $? "creating app directory"
 
-    curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE
+    curl -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE
      VALIDATE $? "downloading cart"
     cd /app
 

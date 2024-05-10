@@ -4,7 +4,7 @@ Description=Payment Service
 [Service]
 User=root
 WorkingDirectory=/app
-Environment=CART_HOST=user.erumamadu.online
+Environment=CART_HOST=cart.erumamadu.online
 Environment=CART_PORT=8080
 Environment=USER_HOST=user.erumamadu.online
 Environment=USER_PORT=8080
