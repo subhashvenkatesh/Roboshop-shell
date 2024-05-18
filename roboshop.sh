@@ -3,11 +3,13 @@
 
 AMI=ami-0f3c7d07486cad139
 SG_ID=sg-09551652be94e0876
-INSTANCES=$("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+
+INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
 for i in "${INSTANCES[@]}"
 do
-    echo "instance is:: $i"
+    echo "instance is: $i"
+
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
     then
         INSTANCE_TYPE="t3.small"
